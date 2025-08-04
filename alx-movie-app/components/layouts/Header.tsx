@@ -1,94 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import Link from "next/link"
+import Button from "../commons/Button"
 
-interface HeaderProps {
-  onSearch?: (query: string) => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ onSearch }) => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (onSearch) {
-      onSearch(e.target.value);
-    }
-  };
-
+const Header: React.FC = () => {
   return (
-    <header className="bg-white shadow-md">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-xl font-bold text-blue-600">
-            MovieDB
-          </Link>
-
-          <div className="hidden md:flex items-center space-x-4">
-            <Link to="/" className="text-gray-600 hover:text-blue-600">
-              Home
-            </Link>
-            <Link to="/movies" className="text-gray-600 hover:text-blue-600">
-              Movies
-            </Link>
-            <Link to="/tv" className="text-gray-600 hover:text-blue-600">
-              TV Shows
-            </Link>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search movies..."
-                onChange={handleSearch}
-                className="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden"
-            >
-              <FontAwesomeIcon
-                icon={isMenuOpen ? faXmark : faBars}
-                className="text-gray-600"
-              />
-            </button>
-          </div>
+    <header className="h-28 flex items-center bg-[#171D22] px-4 md:px-16 lg:px-44 text-white">
+      <div className="flex items-center justify-between w-full">
+        <h2 className="text-xl md:text-4xl font-semibold">Cine<span className="text-[#E2D609]">Seek</span></h2>
+        <nav className="hidden md:flex flex-1 justify-center space-x-8">
+          <Link href="/" className="hover:text-[#E2D609] px-4 md:px-8 text-xl transition-colors duration-300 font-semibold">Home</Link>
+          <Link href="/movies" className="hover:text-[#E2D609] px-4 md:px-8 text-xl transition-colors duration-300 font-semibold">Movies</Link>
+          <Link href="/contact" className="hover:text-[#E2D609] px-4 md:px-8 text-xl transition-colors duration-300 font-semibold">Contact</Link>
+        </nav>
+        <div className="flex md:hidden">
+          <Button title="Sign in" />
         </div>
-
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="space-y-2 mt-4">
-              <Link
-                to="/"
-                className="block text-gray-600 hover:text-blue-600"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                to="/movies"
-                className="block text-gray-600 hover:text-blue-600"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Movies
-              </Link>
-              <Link
-                to="/tv"
-                className="block text-gray-600 hover:text-blue-600"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                TV Shows
-              </Link>
-            </div>
-          </div>
-        )}
+        <div className="hidden md:flex">
+          <Button title="Sign in" />
+        </div>
       </div>
     </header>
-  );
-};
 
-export default Header;
+  )
+}
+
+export default Header

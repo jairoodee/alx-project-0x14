@@ -1,28 +1,12 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-
-interface LoadingProps {
-  className?: string;
-  size?: 'small' | 'medium' | 'large';
-}
-
-const Loading: React.FC<LoadingProps> = ({
-  className = '',
-  size = 'medium',
-}) => {
-  const sizeClasses = {
-    small: 'w-4 h-4',
-    medium: 'w-6 h-6',
-    large: 'w-8 h-8',
-  };
-
+const Loading: React.FC = () => {
   return (
-    <div className={`flex items-center justify-center ${className}`}>
-      <FontAwesomeIcon
-        icon={faSpinner}
-        className={`animate-spin ${sizeClasses[size]}`}
-      />
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 flex flex-col justify-center items-center">
+        <h1 className="text-4xl md:text-6xl font-semibold text-white mb-4 animate-pulse">
+          Loading...
+        </h1>
+        <p className="text-lg text-gray-300">Please wait, we&apos;re getting next set of movies ready for you.</p>
+      </div>
     </div>
   );
 };
