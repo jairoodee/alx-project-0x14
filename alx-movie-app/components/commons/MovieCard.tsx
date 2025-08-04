@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface MovieCardProps {
   id: string;
@@ -26,7 +26,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
     <div
       className={`group relative overflow-hidden rounded-lg shadow-lg transition-all duration-200 hover:shadow-xl ${className}`}
     >
-      <Link to={`/movie/${id}`} className="block">
+      <Link href={`/movie/${id}`} className="block">
         <img
           src={posterUrl}
           alt={title}
