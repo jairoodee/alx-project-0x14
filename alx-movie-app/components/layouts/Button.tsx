@@ -1,6 +1,11 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons/faSpinner';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+// This is needed to prevent Font Awesome from adding its CSS automatically
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false;
 
 interface ButtonProps {
   children: React.ReactNode;
