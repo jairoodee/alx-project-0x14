@@ -55,7 +55,7 @@ const Button: React.FC<ButtonProps> = ({
       `}
     >
       {loading && (
-        <FontAwesomeIcon icon={faSpinner} spin className="mr-2" />
+        <FontAwesomeIcon icon={faSpinner} style={{ animation: 'spin 1s linear infinite' }} className="mr-2" />
       )}
       {children}
     </button>

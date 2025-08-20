@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faTwitter, faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Footer: React.FC = () => {
@@ -20,13 +20,13 @@ const Footer: React.FC = () => {
 
         <div className="flex space-x-4">
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609]">
-            <FontAwesomeIcon icon={faTwitter} size="lg" />
+            <FontAwesomeIcon icon={faTwitter} style={{ fontSize: '1.5em' }} />
           </a>
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609]">
-            <FontAwesomeIcon icon={faFacebook} size="lg" />
+            <FontAwesomeIcon icon={faFacebook} style={{ fontSize: '1.5em' }} />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609]">
-            <FontAwesomeIcon icon={faInstagram} size="lg" />
+            <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '1.5em' }} />
           </a>
         </div>
       </div>
