@@ -1,6 +1,4 @@
 import Link from "next/link";
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faTwitter, faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Footer: React.FC = () => {
   return (
@@ -18,15 +16,15 @@ const Footer: React.FC = () => {
           <Link href="/privacy" className="hover:text-[#E2D609] text-lg transition-colors duration-300">Privacy Policy</Link>
         </nav>
 
-        <div className="flex space-x-4">
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609]">
-            <FontAwesomeIcon icon={faTwitter} style={{ fontSize: '1.5em' }} />
+        <div className="flex space-x-6">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609] text-lg">
+            Twitter
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609]">
-            <FontAwesomeIcon icon={faFacebook} style={{ fontSize: '1.5em' }} />
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609] text-lg">
+            Facebook
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609]">
-            <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '1.5em' }} />
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609] text-lg">
+            Instagram
           </a>
         </div>
       </div>

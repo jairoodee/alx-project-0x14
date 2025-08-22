@@ -1,11 +1,4 @@
 import React from 'react';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons/faSpinner';
-import '@fortawesome/fontawesome-svg-core/styles.css';
-
-// This is needed to prevent Font Awesome from adding its CSS automatically
-import { config } from '@fortawesome/fontawesome-svg-core';
-config.autoAddCss = false;
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -54,10 +47,14 @@ const Button: React.FC<ButtonProps> = ({
         ${className}
       `}
     >
-      {loading && (
-        <FontAwesomeIcon icon={faSpinner} style={{ animation: 'spin 1s linear infinite' }} className="mr-2" />
+      {loading ? (
+        <span className="flex items-center justify-center">
+          <span className="animate-spin mr-2">⏳</span>
+          {children}
+        </span>
+      ) : (
+        children
       )}
-      {children}
     </button>
   );
 };
